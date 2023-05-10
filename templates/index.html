@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Prediction</title>
+    
+    
+</head>
+
+<body>
+
+     <div style="color:black" >
+        
+        <h2>Car (Re)Selling Price Prediction</h2>
+        <div style="width: 60%">
+            <form action="{{ url_for('predict')}}"  method="post">
+                <table border=0 align="center">
+                    <tr>
+                        <td> 
+                            <h3>Year car was bought</h3>
+                        </td>
+                        <td>
+                            <input id="in_year" name="Year" type="text" pattern="\d*" 
+                            minlength="4" maxlength="4" required="required">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Current showroom price? (lakhs INR) </h3>
+                        </td>
+                        <td>
+                            <input id="in_price" type="number"  step="any" name="Present_Price" required="required">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Distance travelled by car (km)</h3>
+                        </td>
+                        <td>
+                            <input id="in_dist" type="number" step="any" name="Kms_Driven" required="required">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h3>Previous Car Owners</h3>
+                        </td>
+                        <td>
+                            <select name="Owner" id="own" required="required">
+                                <option value="0">No owner</option>
+                                <option value="1">1 owner</option>
+                                <option value="2">2 owners</option>
+                                <option value="3">3 owners</option>
+                                <option value="4">4 or more</option>
+                            </select>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <h3>Fuel type?</h3>
+                        </td>
+                        <td>
+                            <select name="Fuel_Type_Petrol" id="fuel" required="required">
+                                <option value="Petrol">Petrol</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="Cng">CNG</option>
+                            </select>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <h3>Dealer or Individual?</h3>
+                        </td>
+                        <td>
+                            <select name="Seller_Type_Individual" id="seller" required="required">
+                                <option value="Dealer">Dealer</option>
+                                <option value="Individual">Individual</option>
+                            </select>
+                        </td>
+                    </tr>   
+                    <tr>
+                        <td>
+                            <h3>Transmission type</h3>
+                        </td>
+                        <td>
+                            <select name="Transmission_Manual" id="trans" required="required">
+                                <option value="Manual">Manual Car</option>
+                                <option value="Automatic">Automatic Car</option>
+                            </select>
+                        </td>
+                    </tr>                     
+                </table>
+                  
+                <br>
+                <br>
+                <button id="sub" type="submit ">Calculate the Selling Price</button>
+                <br>
+            </form>
+            
+                <br>
+                <br>
+                <h3>{{ prediction_text }}<h3>
+        </div>
+        
+    </div>
+
+    <style>
+        
+        body {
+          background-image: url("{{ url_for('static', filename='bg-car2.jpeg') }}");
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          padding: 0px;
+        }
+        
+        #in_year,
+        #in_price,
+        #in_dist {
+            border-radius: 12px;
+            height: 25px;
+            font-size: 18px;
+            text-align: center;
+        }
+                
+        #own:hover,
+        #fuel:hover,
+        #seller:hover,
+        #trans:hover,
+        #sub:hover  {
+            background-color: coral;
+        } 
+
+        #own,
+        #fuel,
+        #seller,
+        #trans{
+            border-radius: 14px;
+            font-size: 18px;
+            height: 43px;
+            text-align: center;
+            width: 150px;
+        }
+                 
+
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        
+        #sub {
+            width: 250px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+
+        
+      
+    </style>
+</body>
+
+</html>
