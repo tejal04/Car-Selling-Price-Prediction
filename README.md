@@ -8,8 +8,8 @@ It is available through Kaggle [link](https://www.kaggle.com/datasets/nehalbirla
 
 ### Files
 - Version-1 : [EDA & Model](Car-Selling-Price-Prediction-v1.ipynb) on [Data-v1](data/car%20data%20v1.csv)
-- Version-2 : [Data-v2]("data/car data v2.csv")
-- Version-3 : [EDA](Car-Selling-Price-Prediction.ipynb) on [Data-v3]("data/car details.csv")
+- Version-2 : [Data-v2](data/car%20data%20v2.csv)
+- Version-3 : [EDA](Car-Selling-Price-Prediction.ipynb) on [Data-v3](data/car%20details.csv)
 
 ### User Interface
 ![UI-1](/static/Output-1.png?raw=true "Default UI View")
